@@ -1,0 +1,6 @@
+- name: checkrb
+  service: demo
+  command: bundle exec ruby check.rb
+- name: test
+  service: demo
+  command: bundle exec ruby test.rb
