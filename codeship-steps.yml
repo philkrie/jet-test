@@ -1,6 +1,13 @@
-- name: checkrb
-  service: demo
-  command: bundle exec ruby check.rb
-- name: test
-  service: demo
-  command: bundle exec ruby test.rb
+- type: parallel
+  steps:
+    - name: checkrb
+      service: demo
+      command: bundle exec ruby check.rb
+    - name: test
+      service: demo
+      command: bundle exec ruby test.rb
+- type: serial
+  steps:
+    - name: aws_push
+      service: awsdeployment
+      command: aws s3 cp /deploy/index-test.html s3://dev.www.upage.tv

@@ -11,3 +11,10 @@ redis:
   image: redis:3.0.5
 postgres:
    image: postgres:9.3.6
+awsdeployment:
+  image: philkrie/jet-test
+  encrypted_env_file: aws-deployment.env.encrypted
+  environment:
+    - AWS_DEFAULT_REGION=us-west-2
+  volumes:
+    - ./:/deploy
