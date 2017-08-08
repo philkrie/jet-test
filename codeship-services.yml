@@ -12,7 +12,7 @@ redis:
 postgres:
    image: postgres:9.3.6
 awsdeployment:
-  image: philkrie/jet-test
+  image: codeship/aws-deployment
   encrypted_env_file: aws-deployment.env.encrypted
   environment:
     - AWS_DEFAULT_REGION=us-west-2

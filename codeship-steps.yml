@@ -2,4 +2,4 @@
   steps:
     - name: aws_push
       service: awsdeployment
-      command: aws s3 cp /deploy/index-test.html s3://dev.www.upage.tv
+      command: aws s3 cp /deploy/deploy/index-test.html s3://dev.www.upage.tv
